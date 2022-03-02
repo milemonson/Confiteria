@@ -14,22 +14,27 @@ namespace Entidades
         string Apellido;
         string Telefono;
         string Email;
-        int idUser;
+        int IdUser;
+        string NameUser;
         int Estado;
         float Comision;
+
+        public Usuario usuario { get; set; }
+
 
         public Mozo() { 
         
         }
 
-        public Mozo (int mozo, string name, string lastname, string cellphone, string email,int idusuario, int estado,float comision) {
+        public Mozo (int mozo, string name, string lastname, string cellphone, string email,int idUser,string nameUser, int estado,float comision) {
 
             idMozo = mozo;
             Nombre = name;
             Apellido = lastname;
             Telefono = cellphone;
             Email = email;
-            idUser = idusuario;
+            IdUser = idUser;
+            NameUser = nameUser;
             Estado = estado;
             Comision = comision;
          }
@@ -64,10 +69,15 @@ namespace Entidades
             set => Email = value;
         }
 
-        public int idusuario
+        public int idUser
         {
-            get => idUser;
-            set => idUser = value;
+            get => IdUser;
+            set => IdUser = value;
+        }
+        public string nameUser
+        {
+            get => NameUser;
+            set => NameUser = value;
         }
         public int estado
         {

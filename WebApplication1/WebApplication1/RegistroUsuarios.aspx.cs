@@ -25,6 +25,7 @@ namespace PasteleriaProyect
             List<Usuario> users = UsuarioBLL.CargarUser();
             gvUsuarios.DataSource = users;
             gvUsuarios.DataBind();
+            gvUsuarios.Columns[0].Visible = false;
         }
 
 
@@ -35,9 +36,9 @@ namespace PasteleriaProyect
             {
                     Button btn = (Button)sender;
                     GridViewRow gvr = (GridViewRow)btn.NamingContainer;
-                    inputid.Text = gvr.Cells[0].Text;
-                    inputuser.Text = gvr.Cells[1].Text;
-                    inputpassword.Text = gvr.Cells[2].Text;
+                    txtId.Text = gvr.Cells[0].Text;
+                    txtUser.Text = gvr.Cells[1].Text;
+                    txtPass.Text = gvr.Cells[2].Text;
                     Deshabilitar();
                     btnModificar.Enabled = true;
                     btnCambios.Enabled = true;
@@ -53,15 +54,15 @@ namespace PasteleriaProyect
         }
             private void Deshabilitar()
             {
-            inputuser.Enabled = false;
-            inputpassword.Enabled = false;
+            txtUser.Enabled = false;
+            txtPass.Enabled = false;
 
             }
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
-            inputuser.Enabled = true;
-            inputpassword.Enabled = true;
+            txtUser.Enabled = true;
+            txtPass.Enabled = true;
             btnCambios.Enabled = true;
             btnEliminar.Enabled = true;
         }
@@ -73,13 +74,13 @@ namespace PasteleriaProyect
             {     
                 try
                 {
-                    usu.idUser = int.Parse(inputid.Text);
-                    usu.nameUser = inputuser.Text;
-                    usu.password = inputpassword.Text;
+                    usu.idUser = int.Parse(txtId.Text);
+                    usu.nameUser = txtUser.Text;
+                    usu.password = txtPass.Text;
                     usu.state =1;
                     UsuarioBLL.ActualizarUser(usu);
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "guardocambios()", true);
-
+                    cargargrilla();
                 }
                 catch (Exception)
                 {
@@ -95,12 +96,12 @@ namespace PasteleriaProyect
             {    
                 try
                 {
-                    usu.idUser = int.Parse(inputid.Text);
-                    usu.nameUser = inputuser.Text;
-                    usu.password = inputpassword.Text;
+                    usu.idUser = int.Parse(txtId.Text);
+                    usu.nameUser = txtUser.Text;
+                    usu.password = txtPass.Text;
                     usu.state = 2;
                     UsuarioBLL.DeleteUser(usu);
-                   
+                    cargargrilla();
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "seeliminouser()", true);
 
                 }
@@ -121,12 +122,12 @@ namespace PasteleriaProyect
             {
                 try
                 {
-                    usu.nameUser = inputnew1.Text;
-                    usu.password = inputnew2.Text;
+                    usu.nameUser = txtNameUsernew.Text;
+                    usu.password = txtPassnew.Text;
                     usu.state=1;
                     UsuarioBLL.NewUser(usu);
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "guardonuevoUser()", true);
-
+                    cargargrilla();
                 }
                 catch (Exception)
                 {
@@ -141,15 +142,15 @@ namespace PasteleriaProyect
        
         public bool ValidateUserModal()
         {
-            if (inputuser.Text == "")
+            if (txtUser.Text == "")
             {
                 return false;
             }
-            if (inputpassword.Text == "")
+            if (txtPass.Text == "")
             {
                 return false;
             }
-            if (inputstate.Text == "1")
+            if (txtState.Text == "1")
             {
                 return false;
             }
@@ -159,15 +160,15 @@ namespace PasteleriaProyect
 
         public bool ValidateUser()
         {
-            if (inputnew1.Text == "")
+            if (txtNameUsernew.Text == "")
             {
                 return false;
             }
-            if (inputnew2.Text == "")
+            if (txtPassnew.Text == "")
             {
                 return false;
             }
-            if (inputnew3.Text == "1")
+            if (txtStatenew.Text == "1")
             {
                 return false;
             }

@@ -23,7 +23,10 @@ namespace PasteleriaProyect
             List<Entidades.Rubro> rub = RubroBLL.CargarRubro();
             gvRubro.DataSource = rub;
             gvRubro.DataBind();
-        
+            gvRubro.Columns[0].Visible = false;
+
+
+
         }
 
         protected void btnSeleccionar_Click(object sender, EventArgs e)
@@ -32,9 +35,9 @@ namespace PasteleriaProyect
             {
                 Button btn = (Button)sender;
                 GridViewRow gvr = (GridViewRow)btn.NamingContainer;
-                input0.Text = gvr.Cells[0].Text;
-                input1.Text = gvr.Cells[1].Text;
-                input2.Text = gvr.Cells[2].Text;
+                txtId.Text = gvr.Cells[0].Text;
+                txtNameRubro.Text = gvr.Cells[1].Text;
+                txtDescription.Text = gvr.Cells[2].Text;
                 Deshabilitar();
                 btnModificar.Enabled = true;
                 btnCambios.Enabled = true;
@@ -50,15 +53,15 @@ namespace PasteleriaProyect
         }
         private void Deshabilitar()
         {
-            input1.Enabled = false;
-            input2.Enabled = false;
+            txtNameRubro.Enabled = false;
+            txtDescription.Enabled = false;
           
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
-            input1.Enabled = true;
-            input2.Enabled = true;
+            txtNameRubro.Enabled = true;
+            txtDescription.Enabled = true;
             btnCambios.Enabled = true;
             btnEliminar.Enabled = true;
         }
@@ -70,15 +73,15 @@ namespace PasteleriaProyect
 
                 try
                 {
-                    ru.idRubro = int.Parse(input0.Text);
-                    ru.nameRubro = input1.Text;
-                    ru.descripcion = input2.Text;
+                    ru.idRubro = int.Parse(txtId.Text);
+                    ru.nameRubro = txtNameRubro.Text;
+                    ru.descripcion = txtDescription.Text;
                     ru.estado = 1;
                    
                    
                     RubroBLL.ActualizarRubro(ru);
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "guardocambios()", true);
-
+                    cargargrilla();
                 }
                 catch (Exception)
                 {
@@ -93,13 +96,13 @@ namespace PasteleriaProyect
             {
                 try
                 {
-                    ru.idRubro = int.Parse(input0.Text);
-                    ru.nameRubro = input1.Text;
-                    ru.descripcion = input2.Text;
+                    ru.idRubro = int.Parse(txtId.Text);
+                    ru.nameRubro = txtNameRubro.Text;
+                    ru.descripcion = txtDescription.Text;
                     ru.estado = 2;
                     RubroBLL.DeleteCategory(ru);
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "seeliminoRubro()", true);
-
+                    cargargrilla();
                 }
                 catch (Exception)
                 {
@@ -116,13 +119,13 @@ namespace PasteleriaProyect
             {
                 try
                 {
-                    ru.nameRubro = inputnew1.Text;
-                    ru.descripcion = inputnew2.Text;
+                    ru.nameRubro = txtNameRubronew.Text;
+                    ru.descripcion = txtDescriptionnew.Text;
                     ru.estado = 1;
 
                     RubroBLL.NewRubro(ru);
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "guardonuevoRubro()", true);
-
+                    cargargrilla();
                 }
                 catch (Exception)
                 {
@@ -134,19 +137,19 @@ namespace PasteleriaProyect
         }
         public bool ValidateRubroModal()
         {
-            if (input0.Text == "")
+            if (txtId.Text == "")
             {
                 return false;
             }
-            if (input1.Text == "")
+            if (txtNameRubro.Text == "")
             {
                 return false;
             }
-            if (input2.Text == "")
+            if (txtDescription.Text == "")
             {
                 return false;
             }
-            if (input3.Text == "1")
+            if (txtState.Text == "1")
             {
                 return false;
             }
@@ -156,16 +159,16 @@ namespace PasteleriaProyect
 
         public bool ValidateRubro()
         {
-            if (inputnew1.Text == "")
+            if (txtNameRubronew.Text == "")
             {
                 return false;
             }
-            if (inputnew2.Text == "")
+            if (txtDescriptionnew.Text == "")
             {
                 return false;
             }
             
-            if (inputestado.Text == "1")
+            if (txtStatenew.Text == "1")
             {
                 return false;
             }

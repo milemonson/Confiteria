@@ -25,14 +25,14 @@ namespace PasteleriaProyect
             try
             {
                 List<Entidades.Rubro> ru = RubroDAL.ObtenerCombo();
-                dropRubro1.DataSource = ru;
-                dropRubro1.DataTextField = "nameRubro";
-                dropRubro1.DataValueField = "idRubro";
-                dropRubro1.DataBind();
-                dropRubro.DataSource = ru;
-                dropRubro.DataTextField = "nameRubro";
-                dropRubro.DataValueField = "idRubro";
-                dropRubro.DataBind();
+                dropRubroEdit.DataSource = ru;
+                dropRubroEdit.DataTextField = "nameRubro";
+                dropRubroEdit.DataValueField = "idRubro";
+                dropRubroEdit.DataBind();
+                dropRubronew.DataSource = ru;
+                dropRubronew.DataTextField = "nameRubro";
+                dropRubronew.DataValueField = "idRubro";
+                dropRubronew.DataBind();
             }
             catch (Exception ex)
             {
@@ -45,6 +45,8 @@ namespace PasteleriaProyect
             List<Entidades.Articulo> art = ArticuloBLL.CargarArticulo();
             gvArticulo.DataSource = art;
             gvArticulo.DataBind();
+            gvArticulo.Columns[2].Visible = false;
+            gvArticulo.Columns[0].Visible = false;
         }
 
         protected void btnSeleccionar_Click(object sender, EventArgs e)
@@ -55,10 +57,12 @@ namespace PasteleriaProyect
                 Button btn = (Button)sender;
                 GridViewRow gvr = (GridViewRow)btn.NamingContainer;
                 input0.Text = gvr.Cells[0].Text;
-                input1.Text = gvr.Cells[1].Text;
-                input2.Text = gvr.Cells[3].Text;
-                input3.Text = gvr.Cells[4].Text;
-                input4.Text = gvr.Cells[5].Text;
+                txtNameRubro.Text = gvr.Cells[1].Text;
+                dropRubroEdit.SelectedValue = gvr.Cells[2].Text;
+                txtNameArticulo.Text = gvr.Cells[3].Text;
+                txtQuantity.Text = gvr.Cells[4].Text;
+                txtPrice.Text = gvr.Cells[5].Text;
+
                 Deshabilitar();
                 btnModificar.Enabled = true;
                 btnCambios.Enabled = true;
@@ -74,21 +78,21 @@ namespace PasteleriaProyect
         }
         private void Deshabilitar()
         {
-            input1.Enabled = false;
-            input2.Enabled = false;
-            input3.Enabled = false;
-            input4.Enabled = false;
-            dropRubro1.Enabled = false;
+            txtNameRubro.Enabled = false;
+            txtNameArticulo.Enabled = false;
+            txtQuantity.Enabled = false;
+            txtPrice.Enabled = false;
+            dropRubroEdit.Enabled = false;
 
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
-            input1.Enabled = true;
-            input2.Enabled = true;
-            input3.Enabled = true;
-            input4.Enabled = true;
-            dropRubro1.Enabled = true;
+            txtNameRubro.Enabled = false;
+            txtNameArticulo.Enabled = true;
+            txtQuantity.Enabled = true;
+            txtPrice.Enabled = true;
+            dropRubroEdit.Enabled = true;
             btnCambios.Enabled = true;
             btnEliminar.Enabled = true;
         }
@@ -103,15 +107,15 @@ namespace PasteleriaProyect
                 try
                 {
                     ar.idArticulo = int.Parse(input0.Text);
-                    ar.nombreRubro = input1.Text;
-                    ar.descripcion = input2.Text;
-                    ar.cantidad = int.Parse(input3.Text);
-                    ar.idRubro = int.Parse(dropRubro1.SelectedValue);
-                    ar.precio = float.Parse(input4.Text);
+                    ar.nombreRubro = txtNameRubro.Text;
+                    ar.nameArticulo = txtNameArticulo.Text;
+                    ar.cantidad = int.Parse(txtQuantity.Text);
+                    ar.idRubro = int.Parse(dropRubroEdit.SelectedValue);
+                    ar.precio = float.Parse(txtPrice.Text);
                     ar.estado = 1;
                     ArticuloBLL.ActualizarArticulo(ar);
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "guardocambios()", true);
-
+                    cargargrilla();
                 }
                 catch (Exception)
                 {
@@ -127,14 +131,16 @@ namespace PasteleriaProyect
                 try
                 {
                     ar.idArticulo = int.Parse(input0.Text);
-                    ar.nombreRubro = input1.Text;
-                    ar.descripcion = input2.Text;
-                    ar.cantidad = int.Parse(input3.Text);
-                    ar.precio = float.Parse(input4.Text);
-                    ArticuloBLL.DeleteArticle(ar);
+                    ar.nombreRubro = txtNameRubro.Text;
+                    ar.idRubro = int.Parse(dropRubroEdit.SelectedValue);
+                    ar.nameArticulo = txtNameArticulo.Text;
+                    ar.cantidad = int.Parse(txtQuantity.Text);
+                    ar.precio = float.Parse(txtPrice.Text);
                     ar.estado = 2;
+                    ArticuloBLL.DeleteArticle(ar);
+                    
                      ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "seeliminoarticulo()", true);
-
+                    cargargrilla();
                 }
                 catch (Exception)
                 {
@@ -151,16 +157,16 @@ namespace PasteleriaProyect
             {
                 try
                 {
-                    ar.nombreRubro = inputnew1.Text;
-                    ar.descripcion = inputnew2.Text;
-                    ar.cantidad = int.Parse(inputnew3.Text);
-                    ar.idRubro = int.Parse(dropRubro.SelectedValue);
-                    ar.precio = float.Parse(input4.Text);
+                    ar.nombreRubro = txtNameRubro.Text;
+                    ar.nameArticulo = txtNameArticulonew.Text;
+                    ar.cantidad = int.Parse(txtQuantitynew.Text);
+                    ar.idRubro = int.Parse(dropRubronew.SelectedValue);
+                    ar.precio = float.Parse(txtPricenew.Text);
                     ar.estado = 1;
-
-                   ArticuloBLL.NewArticulo(ar);
+                  
+                    ArticuloBLL.NewArticulo(ar);
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "guardonuevoarticulo()", true);
-
+                    cargargrilla();
                 }
                 catch (Exception)
                 {
@@ -170,6 +176,9 @@ namespace PasteleriaProyect
 
             }
         }
+
+      
+
         protected void btnNuevo_Click(object sender, EventArgs e)
         {
             CargarComboRubro();
@@ -181,23 +190,23 @@ namespace PasteleriaProyect
             {
                 return false;
             }
-            if (input1.Text == "")
+            if (txtNameRubro.Text == "")
             {
                 return false;
             }
-            if (input2.Text == "")
+            if (txtNameArticulo.Text == "")
             {
                 return false;
             }
-            if (input3.Text == "")
+            if (txtQuantity.Text == "")
             {
                 return false;
             }
-            if (input4.Text == "")
+            if (txtPrice.Text == "")
             {
                 return false;
             }
-            if(input5.Text == "1")
+            if(txtstate.Text == "1")
             {
                 return false;
             }
@@ -207,24 +216,20 @@ namespace PasteleriaProyect
 
         public bool ValidateArticulo()
         {
-            if (inputnew1.Text == "")
+            if (txtNameArticulonew.Text == "")
             {
                 return false;
             }
-            if (inputnew2.Text == "")
+            if (txtQuantitynew.Text == "")
             {
                 return false;
             }
-            if (inputnew3.Text == "")
+            if (txtPricenew.Text == "")
             {
                 return false;
             }
-            if (inputnew4.Text == "")
-            {
-                return false;
-            }
-            if (inputestado.Text == "1")
-            {
+            if (txtstatenew.Text == "1")
+            { 
                 return false;
             }
             return true;

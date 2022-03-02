@@ -38,15 +38,15 @@
                           <ContentTemplate>
                               <div class="row g-3">
                                 <div class="col-6 ">
-                                     <asp:TextBox ID="inputid" runat="server" Visible="false" Style="display:none"></asp:TextBox>
+                                     <asp:TextBox ID="txtId" runat="server" Visible="false" Style="display:none"></asp:TextBox>
                                     <asp:Label ID="Label3" runat="server" Text="Nombre Usuario:"></asp:Label>
-                                    <asp:TextBox ID="inputuser" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtUser" runat="server"></asp:TextBox>
                                 </div>
                                 
                                 <div class="col-6 ">
                                     <asp:Label ID="Label4" runat="server" Text="Contraseña:"></asp:Label>
-                                    <asp:TextBox ID="inputpassword" runat="server"></asp:TextBox>
-                                    <asp:TextBox ID="inputstate" runat="server" Visible="true" Style="display:none"> </asp:TextBox>
+                                    <asp:TextBox ID="txtPass" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtState" runat="server" Visible="true" Style="display:none"> </asp:TextBox>
                                 </div>
                                     
                                  </div>
@@ -81,13 +81,13 @@
                                  <div class="row g-3">
                                 <div class="col-6 ">
                                     <asp:Label ID="Label1" runat="server" Text="Nombre Usuario:"></asp:Label>
-                                    <asp:TextBox ID="inputnew1" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtNameUsernew" runat="server"></asp:TextBox>
                                 </div>
                                 
                                 <div class="col-6 ">
                                     <asp:Label ID="Label2" runat="server" Text="Contraseña:"></asp:Label>
-                                    <asp:TextBox ID="inputnew2" runat="server"></asp:TextBox>
-                                      <asp:TextBox ID="inputnew3" runat="server" Visible="true" Style="display:none"> </asp:TextBox>
+                                    <asp:TextBox ID="txtPassnew" runat="server"></asp:TextBox>
+                                      <asp:TextBox ID="txtStatenew" runat="server" Visible="true" Style="display:none"> </asp:TextBox>
                                 </div>
                                      
                                  </div>

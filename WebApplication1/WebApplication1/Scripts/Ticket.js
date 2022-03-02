@@ -9,7 +9,7 @@
     var master = document.getElementById("masterBody");
 
     window.print();
-    window.location.href = "/Ticket.aspx"
+    /*window.location.href = "/.aspx"*/
     // Clean up print section for future use
     var oldElem = document.getElementById("printSection");
     if (oldElem != null) { oldElem.parentNode.removeChild(oldElem); }

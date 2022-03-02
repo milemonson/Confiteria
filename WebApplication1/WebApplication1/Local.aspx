@@ -43,23 +43,23 @@
         <ContentTemplate>
                                  <div class="row g-3">
                                 <div class="col-6 ">
-                                     <asp:TextBox ID="input0" runat="server" Style="display:none"></asp:TextBox>
+                                     <asp:TextBox ID="txtId" runat="server" Style="display:none"></asp:TextBox>
                                     <asp:Label ID="lbl1" runat="server" Text="Nombre Entidad:"></asp:Label>
-                                    <asp:TextBox ID="input1" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtNameEntiti" runat="server"></asp:TextBox>
                                 </div>
                                 
                                 <div class="col-6 ">
                                     <asp:Label ID="lbl2" runat="server" Text="CUIT:"></asp:Label>
-                                    <asp:TextBox ID="input2" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtCuit" runat="server"></asp:TextBox>
                                 </div>
                                       <div class="col-6 ">
                                     <asp:Label ID="lbl3" runat="server" Text="IIBB:"></asp:Label>
-                                    <asp:TextBox ID="input3" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtIIBB" runat="server"></asp:TextBox>
                                 </div>
                                 
                                 <div class="col-6 ">
                                     <asp:Label ID="lbl4" runat="server" Text="IVA:"></asp:Label>
-                                    <asp:TextBox ID="input4" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtIVA" runat="server"></asp:TextBox>
                                 </div>
                                      
                                  </div>
@@ -96,21 +96,21 @@
                                  <div class="row g-3">
                                 <div class="col-6 ">
                                     <asp:Label ID="Label1" runat="server" Text="Nombre Entidad:"></asp:Label>
-                                    <asp:TextBox ID="inputnew1" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtNameEntitinew" runat="server"></asp:TextBox>
                                 </div>
                                 
                                 <div class="col-6 ">
                                     <asp:Label ID="Label2" runat="server" Text="CUIT:"></asp:Label>
-                                    <asp:TextBox ID="inputnew2" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtCuitnew" runat="server"></asp:TextBox>
                                 </div>
                                       <div class="col-6 ">
                                     <asp:Label ID="Label3" runat="server" Text="IIBB:"></asp:Label>
-                                    <asp:TextBox ID="inputnew3" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtIIBBnew" runat="server"></asp:TextBox>
                                 </div>
                                 
                                 <div class="col-6 ">
                                     <asp:Label ID="Label4" runat="server" Text="IVA:"></asp:Label>
-                                    <asp:TextBox ID="inputnew4" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtIVAnew" runat="server"></asp:TextBox>
                                 </div>
                                      
                                  </div>

@@ -19,10 +19,10 @@
 		<img src="./img/logo.png" width="150" height="150" />
 		</div>
         <asp:Label ID="Label1" CssClass="Label1" runat="server" Text="Usuario:"></asp:Label>
-        <asp:TextBox ID="inputuser" CssClass="inputuser" runat="server" ></asp:TextBox>
+        <asp:TextBox ID="txtUser" CssClass="inputuser" runat="server" ></asp:TextBox>
        
         <asp:Label ID="Label2" CssClass="Label2" runat="server" Text="Contraseña:"></asp:Label>
-        <asp:TextBox ID="inputpass" CssClass="inputpass" runat="server" TextMode="Password"></asp:TextBox>
+        <asp:TextBox ID="txtPass" CssClass="inputpass" runat="server" TextMode="Password"></asp:TextBox>
          <label ID="Label3"><input type="checkbox" runat="server" onchange="document.getElementById('inputpass').type = this.checked ? 'text' : 'password'"/>Mostrar/Ocultar</label>
         
         <asp:Button ID="btnLogin" CssClass="btnLogin" runat="server" Text="Entrar" OnClick="btnLogin_Click" />

@@ -51,13 +51,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.UpdatePanel Upadate3;
 
         /// <summary>
-        /// Control inputid.
+        /// Control txtId.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputid;
+        protected global::System.Web.UI.WebControls.TextBox txtId;
 
         /// <summary>
         /// Control Label3.
@@ -69,13 +69,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Control inputuser.
+        /// Control txtUser.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputuser;
+        protected global::System.Web.UI.WebControls.TextBox txtUser;
 
         /// <summary>
         /// Control Label4.
@@ -87,22 +87,22 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// Control inputpassword.
+        /// Control txtPass.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputpassword;
+        protected global::System.Web.UI.WebControls.TextBox txtPass;
 
         /// <summary>
-        /// Control inputstate.
+        /// Control txtState.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputstate;
+        protected global::System.Web.UI.WebControls.TextBox txtState;
 
         /// <summary>
         /// Control btnModificar.
@@ -150,13 +150,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control inputnew1.
+        /// Control txtNameUsernew.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputnew1;
+        protected global::System.Web.UI.WebControls.TextBox txtNameUsernew;
 
         /// <summary>
         /// Control Label2.
@@ -168,22 +168,22 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Control inputnew2.
+        /// Control txtPassnew.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputnew2;
+        protected global::System.Web.UI.WebControls.TextBox txtPassnew;
 
         /// <summary>
-        /// Control inputnew3.
+        /// Control txtStatenew.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputnew3;
+        protected global::System.Web.UI.WebControls.TextBox txtStatenew;
 
         /// <summary>
         /// Control btnAgregar.

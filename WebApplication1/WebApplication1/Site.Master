@@ -38,7 +38,8 @@
                         <li class="mt-3" id="registroRubro" runat="server"><a runat="server" href="./Rubro"><i data-feather="list"></i>Rubro</a></li>
                          <li class="mt-3" id="registroLocal" runat="server"><a runat="server" href="./Local"><i data-feather="home"></i>Local</a></li>
                          <li class="mt-3" id="generarFactura" runat="server"><a runat="server" href="./Ticket"><i data-feather="file"></i>Ticket</a></li>
-                         <li class="mt-3" id="Estadisticas" runat="server"><a runat="server" href="./Estadistica"><i data-feather="activity"></i>Estadistica</a></li>
+                         <li class="mt-3" id="Estadisticas" runat="server"><a runat="server" href="./Estadistica"><i data-feather="activity"></i>Estadistica</a></li>         
+                            <li class="mt-3" id="EstadisticasporFecha" runat="server"><a runat="server" href="./EstadisticaporFecha"><i data-feather="activity"></i>Estadistica por fechas</a></li>
                          <li class="mt-3"><a href="login.aspx"><i data-feather="power"></i>Cerrar Sesion</a></li>
                        </ul>
 
@@ -52,9 +53,11 @@
                
             <form id="formulario" runat="server" action="#" class="subscribe-form">
                         <div>
+
                             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 
                             </asp:ContentPlaceHolder>
+                                
                             <hr/>
             <footer>
                 <p>&copy; <%: DateTime.Now.Year %> - Manolita Pasteleria</p>

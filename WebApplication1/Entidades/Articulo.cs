@@ -11,23 +11,24 @@ namespace Entidades
         int IdArticulo;
         string NombreRubro;
         int IdRubro;
-        string Descripcion;
+        string NameArticulo;
         int Cantidad;
         float Precio;
         int Estado;
+        public Rubro rubro { get; set; }
 
 
         public Articulo(){
-      }
+        }
 
 
 
-        public Articulo( int idArticulo, string nombreRubro,int idRubro, string descripcion, int cantidad, float precio,int estado)
+        public Articulo( int idArticulo, string nombreRubro,int idRubro, string nameArticulo, int cantidad, float precio,int estado)
         {
             IdArticulo = idArticulo;
             NombreRubro = nombreRubro;
             IdRubro = idRubro;
-            Descripcion = descripcion;
+            NameArticulo = nameArticulo;
             Cantidad = cantidad;
             Precio = precio;
             Estado = estado;
@@ -49,10 +50,10 @@ namespace Entidades
             get => IdRubro;
             set => IdRubro = value;
         }
-        public string descripcion
+        public string nameArticulo
         {
-            get => Descripcion;
-            set => Descripcion = value;
+            get => NameArticulo;
+            set => NameArticulo = value;
         }
 
 
@@ -72,6 +73,6 @@ namespace Entidades
             get => Estado;
             set => Estado = value;
         }
-
+    
     }
 }

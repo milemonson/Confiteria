@@ -42,13 +42,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.UpdatePanel Upadate3;
 
         /// <summary>
-        /// Control inputid.
+        /// Control txtId.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputid;
+        protected global::System.Web.UI.WebControls.TextBox txtId;
 
         /// <summary>
         /// Control lb1.
@@ -60,13 +60,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label lb1;
 
         /// <summary>
-        /// Control inputname.
+        /// Control txtName.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputname;
+        protected global::System.Web.UI.WebControls.TextBox txtName;
 
         /// <summary>
         /// Control lb2.
@@ -78,13 +78,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label lb2;
 
         /// <summary>
-        /// Control inputlast.
+        /// Control txtLastName.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputlast;
+        protected global::System.Web.UI.WebControls.TextBox txtLastName;
 
         /// <summary>
         /// Control lb3.
@@ -96,13 +96,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label lb3;
 
         /// <summary>
-        /// Control inputcellphone.
+        /// Control txtCellphone.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputcellphone;
+        protected global::System.Web.UI.WebControls.TextBox txtCellphone;
 
         /// <summary>
         /// Control lb4.
@@ -114,13 +114,22 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label lb4;
 
         /// <summary>
-        /// Control inputmail.
+        /// Control txtMail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputmail;
+        protected global::System.Web.UI.WebControls.TextBox txtMail;
+
+        /// <summary>
+        /// Control txtidUser.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtidUser;
 
         /// <summary>
         /// Control lb5.
@@ -132,13 +141,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label lb5;
 
         /// <summary>
-        /// Control inputiduser.
+        /// Control txtNameUser.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputiduser;
+        protected global::System.Web.UI.WebControls.TextBox txtNameUser;
 
         /// <summary>
         /// Control lb6.
@@ -150,22 +159,22 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label lb6;
 
         /// <summary>
-        /// Control inputcomision.
+        /// Control txtComision.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputcomision;
+        protected global::System.Web.UI.WebControls.TextBox txtComision;
 
         /// <summary>
-        /// Control inputstate.
+        /// Control txtstate.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputstate;
+        protected global::System.Web.UI.WebControls.TextBox txtstate;
 
         /// <summary>
         /// Control btnModificar.
@@ -213,13 +222,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control inputnew1.
+        /// Control txtNamenew.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputnew1;
+        protected global::System.Web.UI.WebControls.TextBox txtNamenew;
 
         /// <summary>
         /// Control Label2.
@@ -231,13 +240,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Control inputnew2.
+        /// Control txtLastNamenew.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputnew2;
+        protected global::System.Web.UI.WebControls.TextBox txtLastNamenew;
 
         /// <summary>
         /// Control Label3.
@@ -249,13 +258,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Control inputnew3.
+        /// Control txtCellphonenew.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputnew3;
+        protected global::System.Web.UI.WebControls.TextBox txtCellphonenew;
 
         /// <summary>
         /// Control Label4.
@@ -267,13 +276,22 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// Control inputnew4.
+        /// Control txtMailnew.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputnew4;
+        protected global::System.Web.UI.WebControls.TextBox txtMailnew;
+
+        /// <summary>
+        /// Control txtidUsernew.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtidUsernew;
 
         /// <summary>
         /// Control Label6.
@@ -285,22 +303,22 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label Label6;
 
         /// <summary>
-        /// Control inputnew5.
+        /// Control txtNameUsernew.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputnew5;
+        protected global::System.Web.UI.WebControls.TextBox txtNameUsernew;
 
         /// <summary>
-        /// Control inputestado.
+        /// Control txtstatenew.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputestado;
+        protected global::System.Web.UI.WebControls.TextBox txtstatenew;
 
         /// <summary>
         /// Control Label5.
@@ -312,13 +330,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
-        /// Control inputnew6.
+        /// Control txtComisionnew.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputnew6;
+        protected global::System.Web.UI.WebControls.TextBox txtComisionnew;
 
         /// <summary>
         /// Control btnPlus.

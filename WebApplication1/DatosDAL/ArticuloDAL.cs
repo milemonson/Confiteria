@@ -24,9 +24,7 @@ namespace DatosDAL
                         using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                         {
                             cmd.CommandType = CommandType.StoredProcedure;
-                         
-                            cmd.Parameters.AddWithValue("@nombreRubro", ar.nombreRubro);
-                            cmd.Parameters.AddWithValue("@descripcion", ar.descripcion);
+                            cmd.Parameters.AddWithValue("@nameArticulo", ar.nameArticulo);
                             cmd.Parameters.AddWithValue("@cantidad", ar.cantidad);
                             cmd.Parameters.AddWithValue("@idRubro", ar.idRubro);
                             cmd.Parameters.AddWithValue("@precio", ar.precio);
@@ -57,8 +55,7 @@ namespace DatosDAL
                         {
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@numdeArticulo", ar.idArticulo);
-                            cmd.Parameters.AddWithValue("@nombreRubro", ar.nombreRubro);
-                            cmd.Parameters.AddWithValue("@descripcion", ar.descripcion);
+                            cmd.Parameters.AddWithValue("@nameArticulo", ar.nameArticulo);
                             cmd.Parameters.AddWithValue("@cantidad", ar.cantidad);
                             cmd.Parameters.AddWithValue("@idRubro", ar.idRubro);
                             cmd.Parameters.AddWithValue("@precio", ar.precio);
@@ -75,6 +72,38 @@ namespace DatosDAL
                 throw ex;
             }
         }
+
+        public static void DescArticulo(int cantidad, int idTicket)
+        {
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConexionBD"].ConnectionString))
+                {
+                    cn.Open();
+
+
+                    using (SqlCommand cmd = new SqlCommand("sp_descArticulo", cn))
+                    {
+                        using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@idTicket", idTicket );
+                            cmd.Parameters.AddWithValue("@cantidad", cantidad);
+                          
+
+                        }
+                        cmd.ExecuteNonQuery();
+                    }
+
+                }
+           
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+  
         public static void EliminarArticulo (Articulo ar)
         {
             try
@@ -90,12 +119,11 @@ namespace DatosDAL
                         {
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.AddWithValue("@numdeArticulo", ar.idArticulo);
-                            cmd.Parameters.AddWithValue("@nombreRubro", ar.nombreRubro);
-                            cmd.Parameters.AddWithValue("@descripcion", ar.descripcion);
-                            cmd.Parameters.AddWithValue("@cantidad", ar.cantidad);
                             cmd.Parameters.AddWithValue("@idRubro", ar.idRubro);
+                            cmd.Parameters.AddWithValue("@cantidad", ar.cantidad);
                             cmd.Parameters.AddWithValue("@precio", ar.precio);
                             cmd.Parameters.AddWithValue("@estado", ar.estado);
+                            cmd.Parameters.AddWithValue("@nameArticulo", ar.nameArticulo);
 
                         }
                         cmd.ExecuteNonQuery();
@@ -168,7 +196,7 @@ namespace DatosDAL
                                 {
                                     Articulo ar = new Articulo();
                                     ar.idArticulo = int.Parse(obt["idArticulo"].ToString());
-                                    ar.descripcion = obt["Descripcion"].ToString();
+                                    ar.nameArticulo = obt["NombreArticulo"].ToString();
                                     articulo.Add(ar);
                                 }
 
@@ -208,11 +236,14 @@ namespace DatosDAL
                                 {
                                     Articulo art = new Articulo();
                                     art.idArticulo = Convert.ToInt32(obt["idArticulo"].ToString());
-                                    art.nombreRubro = obt["Nombre"].ToString();
                                     art.idRubro = Convert.ToInt32(obt["idRubro"].ToString());
-                                    art.descripcion = obt["Descripcion"].ToString();
+                                    art.nameArticulo = obt["NombreArticulo"].ToString();
                                     art.cantidad = Convert.ToInt32(obt["Cantidad"].ToString());
                                     art.precio = float.Parse(obt["Precio"].ToString());
+                                    art.rubro = new Rubro();
+                                    art.rubro.idRubro = Convert.ToInt32(obt["idRubro"].ToString());
+                                    art.rubro.nameRubro = obt["NombreRubro"].ToString();
+
                                     articu.Add(art);
                                 }
                               

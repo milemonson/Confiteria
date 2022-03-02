@@ -25,6 +25,9 @@ namespace PasteleriaProyect
             List<Entidades.Mozo> mozo = MozoBLL.CargarMozos();
             gvMozos.DataSource = mozo;
             gvMozos.DataBind();
+            gvMozos.Columns[0].Visible = false;
+            gvMozos.Columns[5].Visible = false;
+            gvMozos.Columns[7].Visible = false;
 
         }
 
@@ -34,17 +37,19 @@ namespace PasteleriaProyect
             {
                 Button btn = (Button)sender;
                 GridViewRow gvr = (GridViewRow)btn.NamingContainer;
-                inputid.Text = gvr.Cells[0].Text;
-                inputname.Text = gvr.Cells[1].Text;
-                inputlast.Text = gvr.Cells[2].Text;
-                inputcellphone.Text = gvr.Cells[3].Text;
-                inputmail.Text = gvr.Cells[4].Text;
-                inputiduser.Text = gvr.Cells[5].Text;
-                inputcomision.Text = gvr.Cells[7].Text;
+                txtId.Text = gvr.Cells[0].Text;
+                txtName.Text = gvr.Cells[1].Text;
+                txtLastName.Text = gvr.Cells[2].Text;
+                txtCellphone.Text = gvr.Cells[3].Text;
+                txtMail.Text = gvr.Cells[4].Text;
+                txtidUser.Text = gvr.Cells[5].Text;
+                txtNameUser.Text = gvr.Cells[6].Text;
+                txtComision.Text = gvr.Cells[8].Text;
                 Deshabilitar();
                 btnModificar.Enabled = true;
                 btnCambios.Enabled = true;
                 btnEliminar.Enabled = true;
+              
 
             }
             catch (Exception)
@@ -56,51 +61,56 @@ namespace PasteleriaProyect
         }
         private void Deshabilitar()
         {
-            inputname.Enabled = false;
-            inputlast.Enabled = false;
-            inputcellphone.Enabled = false;
-            inputmail.Enabled = false;
-            inputiduser.Enabled = false;
-            inputcomision.Enabled = false;
+            txtName.Enabled = false;
+            txtLastName.Enabled = false;
+            txtCellphone.Enabled = false;
+            txtMail.Enabled = false;
+            txtNameUser.Enabled = false;
+            txtComision.Enabled = false;
 
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
-            inputname.Enabled = true;
-            inputlast.Enabled = true;
-            inputcellphone.Enabled = true;
-            inputmail.Enabled = true;
-            inputcomision.Enabled = true;
-            inputiduser.Enabled = false;
+            txtName.Enabled = true;
+            txtLastName.Enabled = true;
+            txtCellphone.Enabled = true;
+            txtMail.Enabled = true;
+            txtComision.Enabled = true;
+            txtNameUser.Enabled = false;
             btnCambios.Enabled = true;
             btnEliminar.Enabled = true;
         }
         protected void btnCambios_Click(object sender, EventArgs e)
         {
-          
 
             if (ValidatePersonModal() == true)
             {
-               Entidades.Mozo mo = new Entidades.Mozo();
+                Entidades.Mozo mo = new Entidades.Mozo();
 
                 try
                 {
-                    mo.mozo = int.Parse(inputid.Text);
-                    mo.name = inputname.Text;
-                    mo.lastname = inputlast.Text;
-                    mo.cellphone = inputcellphone.Text;
-                    mo.email = inputmail.Text;
-                    mo.idusuario = int.Parse(inputiduser.Text);
-                    mo.comision = float.Parse(inputcomision.Text);
+                    mo.mozo = int.Parse(txtId.Text);
+                    mo.name = txtName.Text;
+                    mo.lastname = txtLastName.Text;
+                    mo.cellphone = txtCellphone.Text;
+                    mo.email = txtMail.Text;
+                    mo.usuario = new Usuario();
+                    mo.usuario.idUser = int.Parse(txtidUser.Text);
+                    mo.usuario.nameUser = txtNameUser.Text;
+                    mo.comision = float.Parse(txtComision.Text);
                     MozoBLL.ActualizarMozo(mo);
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "guardocambios()", true);
-
+                    cargargrilla();
                 }
                 catch (Exception)
                 {
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "noseguardaroncambios()", true);
                 }
+
+            }
+            else {
+                ScriptManager.RegisterClientScriptBlock(this, GetType(), "alert", "myerror1();", true);
             }
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
@@ -111,17 +121,19 @@ namespace PasteleriaProyect
             {
                 try
                 {
-                    mo.mozo = int.Parse(inputid.Text);
-                    mo.name = inputname.Text;
-                    mo.lastname = inputlast.Text;
-                    mo.cellphone = inputcellphone.Text;
-                    mo.email = inputmail.Text;
-                    mo.idusuario = int.Parse(inputiduser.Text);
-                    mo.comision = float.Parse(inputcomision.Text);
+                    mo.mozo = int.Parse(txtId.Text);
+                    mo.name = txtName.Text;
+                    mo.lastname = txtLastName.Text;
+                    mo.cellphone = txtCellphone.Text;
+                    mo.email = txtMail.Text;
+                    mo.usuario = new Usuario();
+                    mo.usuario.idUser = int.Parse(txtidUser.Text);
+                    mo.usuario.nameUser = txtNameUser.Text;
+                    mo.comision = float.Parse(txtComision.Text);
                     mo.estado = 2;
                     MozoBLL.DeleteWaiter(mo);
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "seeliminomozo()", true);
-
+                    cargargrilla();
                 }
                 catch (Exception)
                 {
@@ -130,6 +142,8 @@ namespace PasteleriaProyect
 
             }
         }
+
+
         protected void btnPlus_Click(object sender, EventArgs e)
         {
             Entidades.Mozo mo = new Entidades.Mozo();
@@ -138,16 +152,24 @@ namespace PasteleriaProyect
             {
                 try
                 {
-                    mo.name = inputnew1.Text;
-                    mo.lastname = inputnew2.Text;
-                    mo.cellphone = inputnew3.Text;
-                    mo.email = inputnew4.Text;
-                    mo.idusuario = int.Parse(inputnew5.Text);
-                    mo.comision = float.Parse(inputnew6.Text);
+                    mo.name = txtNamenew.Text;
+                    mo.lastname = txtLastNamenew.Text;
+                    mo.cellphone = txtCellphonenew.Text;
+                    mo.email = txtMailnew.Text;
+                    mo.usuario = new Usuario();
+                    mo.usuario.idUser= MozoDAL.TraerNameUser(txtNameUsernew.Text.Trim());
+                    mo.usuario.nameUser = txtNameUsernew.Text;
+                    if (mo.usuario.idUser == 0) {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "alert", "myerror3()", true);
+                        return;
+                    }
+                    mo.comision = float.Parse(txtComisionnew.Text);
                     mo.estado = 1;
+
                     MozoBLL.NewMozo(mo);
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "guardonuevomozo()", true);
-
+                     cargargrilla();
+                    
                 }
                 catch (Exception)
                 {
@@ -161,27 +183,31 @@ namespace PasteleriaProyect
 
         public bool ValidatePersonModal()
         {
-            if (inputname.Text == "")
+            if (txtName.Text == "")
             {
                 return false;
             }
-            if (inputlast.Text == "")
+            if (txtLastName.Text == "")
             {
                 return false;
             }
-            if (inputcellphone.Text == "")
+            if (txtCellphone.Text == "")
             {
                 return false;
             }
-            if (inputmail.Text == "")
+            if (txtMail.Text == "")
             {
                 return false;
             }
-            if (inputiduser.Text == "")
+            if (txtidUser.Text == "")
             {
                 return false;
             }
-            if (inputcomision.Text == "")
+            if (txtNameUser.Text == "")
+            {
+                return false;
+            }
+            if (txtComision.Text == "")
             {
                 return false;
             }
@@ -191,31 +217,35 @@ namespace PasteleriaProyect
 
         public bool ValidatePerson()
         {
-            if (inputnew1.Text == "")
+            if (txtNamenew.Text == "")
             {
                 return false;
             }
-            if (inputnew2.Text == "")
+            if (txtLastNamenew.Text == "")
             {
                 return false;
             }
-            if (inputnew3.Text == "")
+            if (txtCellphonenew.Text == "")
             {
                 return false;
             }
-            if (inputnew4.Text == "")
+            if (txtMailnew.Text == "")
             {
                 return false;
             }
-            if (inputnew5.Text == "")
+            if (txtidUsernew.Text == "")
             {
                 return false;
             }
-            if (inputnew6.Text == "")
+            if (txtNameUsernew.Text == "")
             {
                 return false;
             }
-            if (inputestado.Text == "1")
+            if (txtComisionnew.Text == "")
+            {
+                return false;
+            }
+            if (txtstatenew.Text == "1")
             {
                 return false;
             }

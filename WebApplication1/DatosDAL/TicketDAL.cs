@@ -93,37 +93,27 @@ namespace DatosDAL
             }
         }
 
-        public static decimal TotalPorDia(DateTime fecha)
-        {
 
-            decimal total = 0;
+        public static SqlDataReader VentasPorRango(DateTime fecha1, DateTime fecha2)
+        {
             SqlConnection cn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConexionBD"].ConnectionString);
 
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "sp_TotalPorDia";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@fecha", fecha);
+                cmd.CommandText = "sp_ventasporRango";
+                cmd.Parameters.AddWithValue("@fecha1", fecha1);
+                cmd.Parameters.AddWithValue("@fecha2", fecha2);
                 cn.Open();
                 SqlDataReader obt = cmd.ExecuteReader();
-
-                if (obt.Read())
-                {
-                    if (obt["Total"] != null)
-                    {
-                        total = (decimal)obt["Total"];
-                    }
-
-                }
-                return total;
-
+                return obt;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return total;
+                throw ex;
             }
         }
     }

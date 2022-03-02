@@ -1,6 +1,10 @@
 ﻿using DatosDAL;
 using Entidades;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Sql;
+using System.Data.SqlClient;
+using System;
 
 namespace ConexionBLL
 {
@@ -27,6 +31,11 @@ namespace ConexionBLL
             List<Mozo> cargar = MozoDAL.ObtenerMozo();
 
             return cargar;
+        }
+
+        public static SqlDataReader ventasPorMozo(DateTime fecha)
+        {
+            return MozoDAL.VentasPorMozo(fecha);
         }
 
 

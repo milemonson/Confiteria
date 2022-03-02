@@ -60,13 +60,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label lblFechaEmision;
 
         /// <summary>
-        /// Control inputDate.
+        /// Control txtDate.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputDate;
+        protected global::System.Web.UI.WebControls.TextBox txtDate;
 
         /// <summary>
         /// Control lblLocal.
@@ -123,13 +123,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl generarDetalle;
 
         /// <summary>
-        /// Control inputidTicket.
+        /// Control txtIdTicket.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputidTicket;
+        protected global::System.Web.UI.WebControls.TextBox txtIdTicket;
 
         /// <summary>
         /// Control lblArticulo.
@@ -159,13 +159,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label lblCantidad;
 
         /// <summary>
-        /// Control inputCantidad.
+        /// Control txtQuantity.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputCantidad;
+        protected global::System.Web.UI.WebControls.TextBox txtQuantity;
 
         /// <summary>
         /// Control LblPrecio.
@@ -177,13 +177,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label LblPrecio;
 
         /// <summary>
-        /// Control inputPrecio.
+        /// Control txtPrice.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputPrecio;
+        protected global::System.Web.UI.WebControls.TextBox txtPrice;
 
         /// <summary>
         /// Control btnCancelar.

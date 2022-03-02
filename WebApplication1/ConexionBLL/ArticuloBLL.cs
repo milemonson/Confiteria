@@ -20,6 +20,11 @@ namespace ConexionBLL
             ArticuloDAL.ActualizarArticulo(ar);
 
         }
+        public static void DescontarArticulo(int cantidad, int idTicket)
+        {
+            ArticuloDAL.DescArticulo(cantidad, idTicket);
+
+        }
         public static void DeleteArticle(Articulo ar)
         {
             ArticuloDAL.EliminarArticulo(ar);

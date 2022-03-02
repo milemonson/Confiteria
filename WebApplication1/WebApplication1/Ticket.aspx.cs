@@ -20,7 +20,7 @@ namespace PasteleriaProyect
             if (!IsPostBack)
             {
                 ViewState["Detalle"] = true;
-                inputDate.Text = Convert.ToString(DateTime.Today);
+                txtDate.Text = Convert.ToString(DateTime.Today);
                 gvTicket.Enabled = true;
                 nextNumberTicket();
                 calcularTotal();
@@ -37,14 +37,15 @@ namespace PasteleriaProyect
             try
             {
                 Entidades.Ticket ti = new Entidades.Ticket();
-                ti.fecha = DateTime.Parse(inputDate.Text);
+                ti.fecha = DateTime.Parse(txtDate.Text);
                 ti.idMozo = int.Parse(dropMozo.SelectedValue);
                 ti.idLocal = int.Parse(dropLocal.SelectedValue);
                 
                 DetalleTicket dt = new DetalleTicket();
                 dt.articulo = int.Parse(dropArticulo.SelectedValue);
-                
-                inputPrecio.Text = ArticuloDAL.ObtenerPrecio(int.Parse(dropArticulo.SelectedValue));
+
+
+                txtPrice.Text = ArticuloDAL.ObtenerPrecio(int.Parse(dropArticulo.SelectedValue));
 
                
                 List<DetalleTicket> tic = new List<DetalleTicket>();
@@ -57,9 +58,11 @@ namespace PasteleriaProyect
                 {
                     idTicket = int.Parse(lblIdTicket.Text),
                     articulo = int.Parse(dropArticulo.SelectedValue),
-                    cantidad = int.Parse(inputCantidad.Text),
-                    precio = float.Parse(inputPrecio.Text),
-                }); 
+                    cantidad = int.Parse(txtQuantity.Text),
+                   
+                    precio = float.Parse(txtPrice.Text),
+                }) ;
+                Session["cantidad"] = int.Parse(txtQuantity.Text);
                 Session["Data"] = tic;
                 gvTicket.DataSource = tic;
                 gvTicket.DataBind();
@@ -83,14 +86,19 @@ namespace PasteleriaProyect
             try
             {
                 Entidades.Ticket ti = new Entidades.Ticket();
-                ti.fecha = DateTime.Parse(inputDate.Text);
+                ti.fecha = DateTime.Parse(txtDate.Text);
                 ti.idMozo = int.Parse(dropMozo.SelectedValue);
                 ti.idLocal = int.Parse(dropLocal.SelectedValue);
 
                 List<DetalleTicket> dt = (List<DetalleTicket>)Session["Data"];
                 
                 bool resultado = TicketDAL.insertarDetalleTicket(ti,dt);
+
+                int idTicket = TicketDAL.TraerNumeroTicket();
                 
+                ArticuloBLL.DescontarArticulo(int.Parse(Session["cantidad"].ToString()), idTicket);
+
+
                 if (resultado)
                 {
                     ScriptManager.RegisterClientScriptBlock(this, GetType(), "alert", "succes();", true);
@@ -107,6 +115,7 @@ namespace PasteleriaProyect
             
             }
         }
+
 
         private void CargarComboLocal()
         {
@@ -126,6 +135,7 @@ namespace PasteleriaProyect
             lblIdTicket.Text = (TicketDAL.TraerNumeroTicket() + 1).ToString();
         }
 
+       
         private void calcularTotal()
         {
             int sum = 0;
@@ -146,7 +156,7 @@ namespace PasteleriaProyect
                     dropDownList.Items.Add("[Seleccione...]");
                     List<Entidades.Articulo> art = ArticuloDAL.ObtenerComboArticulo();
                     foreach (Entidades.Articulo pv in art)
-                        dropArticulo.Items.Add(new ListItem(pv.descripcion, pv.idArticulo.ToString()));
+                        dropArticulo.Items.Add(new ListItem(pv.nameArticulo, pv.idArticulo.ToString()));
                     break;
                 case "dropMozo":
                     dropDownList.Items.Clear();

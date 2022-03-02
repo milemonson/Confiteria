@@ -24,17 +24,18 @@ namespace PasteleriaProyect
             List<Entidades.Local> local = LocalBLL.CargarLocal();
             gvLocal.DataSource = local;
             gvLocal.DataBind();
+            gvLocal.Columns[0].Visible = false;
 
         }
         protected void btnSeleccionar_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
             GridViewRow gvr = (GridViewRow)btn.NamingContainer;
-            input0.Text = gvr.Cells[0].Text;
-            input1.Text = gvr.Cells[1].Text;
-            input2.Text = gvr.Cells[2].Text;
-            input3.Text = gvr.Cells[3].Text;
-            input4.Text = gvr.Cells[4].Text;
+            txtId.Text = gvr.Cells[0].Text;
+            txtNameEntiti.Text = gvr.Cells[1].Text;
+            txtCuit.Text = gvr.Cells[2].Text;
+            txtIIBB.Text = gvr.Cells[3].Text;
+            txtIVA.Text = gvr.Cells[4].Text;
             Deshabilitar();
             btnModificar.Enabled = true;
             btnCambios.Enabled = true;
@@ -49,11 +50,11 @@ namespace PasteleriaProyect
 
                 try
                 {
-                    lo.idLocal = int.Parse(input0.Text);
-                    lo.entidad = input1.Text;
-                    lo.cuit = input2.Text;
-                    lo.iibb = input3.Text;
-                    lo.iva = input4.Text;
+                    lo.idLocal = int.Parse(txtId.Text);
+                    lo.entidad = txtNameEntiti.Text;
+                    lo.cuit = txtCuit.Text;
+                    lo.iibb = txtIIBB.Text;
+                    lo.iva = txtIVA.Text;
 
                     LocalBLL.ActualizarLocal(lo);
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "guardocambios()", true);
@@ -68,18 +69,18 @@ namespace PasteleriaProyect
     }
         private void Deshabilitar()
         {
-            input1.Enabled = false;
-            input2.Enabled = false;
-            input3.Enabled = false;
-            input4.Enabled = false;
+            txtNameEntiti.Enabled = false;
+            txtCuit.Enabled = false;
+            txtIIBB.Enabled = false;
+            txtIVA.Enabled = false;
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
-            input1.Enabled = true;
-            input2.Enabled = true;
-            input3.Enabled = true;
-            input4.Enabled = true;
+            txtNameEntiti.Enabled = true;
+            txtCuit.Enabled = true;
+            txtIIBB.Enabled = true;
+            txtIVA.Enabled = true;
             btnCambios.Enabled = true;
           
         }
@@ -92,11 +93,11 @@ namespace PasteleriaProyect
 
                 try
                 {
-                    lo.idLocal = int.Parse(input0.Text);
-                    lo.entidad = input1.Text;
-                    lo.cuit = input2.Text;
-                    lo.iibb = input3.Text;
-                    lo.iva = input4.Text;
+                    lo.idLocal = int.Parse(txtId.Text);
+                    lo.entidad = txtNameEntiti.Text;
+                    lo.cuit = txtCuit.Text;
+                    lo.iibb = txtIIBB.Text;
+                    lo.iva = txtIVA.Text;
 
                     LocalBLL.ActualizarLocal(lo);
                     ScriptManager.RegisterStartupScript(this, GetType(), "Popup", "guardoLocalNuevo()", true);
@@ -110,23 +111,23 @@ namespace PasteleriaProyect
         }
         public bool ValidateLocalModal()
         {
-            if (input0.Text == "")
+            if (txtId.Text == "")
             {
                 return false;
             }
-            if (input1.Text == "")
+            if (txtNameEntiti.Text == "")
             {
                 return false;
             }
-            if (input2.Text == "")
+            if (txtCuit.Text == "")
             {
                 return false;
             }
-            if (input3.Text == "")
+            if (txtIIBB.Text == "")
             {
                 return false;
             }
-            if (input4.Text == "")
+            if (txtIVA.Text == "")
             {
                 return false;
             }
@@ -136,20 +137,20 @@ namespace PasteleriaProyect
 
         public bool ValidateModal()
         {
-            if (inputnew1.Text == "")
+            if (txtNameEntitinew.Text == "")
             {
                 return false;
             }
-            if (inputnew2.Text == "")
+            if (txtCuitnew.Text == "")
             {
                 return false;
             }
-            if (inputnew3.Text == "")
+            if (txtIIBBnew.Text == "")
             {
                 return false;
             }
 
-            if (inputnew4.Text == "")
+            if (txtIVAnew.Text == "")
             {
                 return false;
             }

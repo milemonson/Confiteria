@@ -24,13 +24,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control inputuser.
+        /// Control txtUser.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputuser;
+        protected global::System.Web.UI.WebControls.TextBox txtUser;
 
         /// <summary>
         /// Control Label2.
@@ -42,13 +42,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Control inputpass.
+        /// Control txtPass.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputpass;
+        protected global::System.Web.UI.WebControls.TextBox txtPass;
 
         /// <summary>
         /// Control btnLogin.

@@ -17,7 +17,8 @@
                     <asp:BoundField DataField="lastname" HeaderText="Apellido" />
                     <asp:BoundField DataField="cellphone" HeaderText="Telefono" />
                      <asp:BoundField DataField="email" HeaderText="Email" />
-                    <asp:BoundField DataField="idusuario" HeaderText="Usuario" />
+                    <asp:BoundField DataField="usuario.idUser" HeaderText="Usuario" />
+                      <asp:BoundField DataField="usuario.nameUser" HeaderText="Nombre Usuario" />
                      <asp:BoundField DataField="estado" HeaderText="Estado" />
                     <asp:BoundField DataField="comision" HeaderText="Comision" />
                    <asp:TemplateField>
@@ -42,33 +43,34 @@
                           <ContentTemplate>
                                  <div class="row g-3">
                                 <div class="col-6 ">
-                                     <asp:TextBox ID="inputid" runat="server" Visible="false" Style="display:none"></asp:TextBox>
+                                     <asp:TextBox ID="txtId" runat="server" Visible="false" Style="display:none"></asp:TextBox>
                                     <asp:Label ID="lb1" runat="server" Text="Nombre:"></asp:Label>
-                                    <asp:TextBox ID="inputname" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
                                 </div>
                                 
                                 <div class="col-6 ">
                                     <asp:Label ID="lb2" runat="server" Text="Apellido:"></asp:Label>
-                                    <asp:TextBox ID="inputlast" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
                                 </div>
                                      
                                        
                                  <div class="col-6">
                                     <asp:Label ID="lb3" runat="server" Text="Telefono:"></asp:Label>
-                                    <asp:TextBox ID="inputcellphone" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtCellphone" runat="server"></asp:TextBox>
                                 </div>
                                  <div class="col-6 ">
                                     <asp:Label ID="lb4" runat="server" Text="Email:"></asp:Label>
-                                    <asp:TextBox ID="inputmail" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtMail" runat="server"></asp:TextBox>
                                 </div>
-                                     <div class="col-6 ">
-                                    <asp:Label ID="lb5" runat="server" Text="ID de Usuario:"></asp:Label>
-                                    <asp:TextBox ID="inputiduser" runat="server"></asp:TextBox>
+                                     <div class="col-6 ">              
+                                        <asp:TextBox ID="txtidUser" runat="server" Visible="false" Style="display: none"></asp:TextBox>
+                                    <asp:Label ID="lb5" runat="server" Text="Nombre de Usuario:"></asp:Label>
+                                    <asp:TextBox ID="txtNameUser" runat="server"></asp:TextBox>
                                           </div>
                                  <div class="col-6">
                                     <asp:Label ID="lb6" runat="server" Text="Comision:"></asp:Label>
-                                   <label><asp:TextBox ID="inputcomision" runat="server"></asp:TextBox>%</label>
-                                       <asp:TextBox ID="inputstate" runat="server" Visible="false" Style="display:none"></asp:TextBox>
+                                   <label><asp:TextBox ID="txtComision" runat="server"></asp:TextBox>%</label>
+                                       <asp:TextBox ID="txtstate" runat="server" Visible="false" Style="display:none"></asp:TextBox>
                                 </div>
                                      </div>
                                <div class="modal-footer">
@@ -100,31 +102,32 @@
                                  <div class="row g-3">
                                 <div class="col-6 ">
                                     <asp:Label ID="Label1" runat="server" Text="Nombre:"></asp:Label>
-                                    <asp:TextBox ID="inputnew1" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtNamenew" runat="server"></asp:TextBox>
                                 </div>
                                 
                                 <div class="col-6 ">
                                     <asp:Label ID="Label2" runat="server" Text="Apellido:"></asp:Label>
-                                    <asp:TextBox ID="inputnew2" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtLastNamenew" runat="server"></asp:TextBox>
                                 </div>
                                      
                                        
                                  <div class="col-6">
                                     <asp:Label ID="Label3" runat="server" Text="Telefono:"></asp:Label>
-                                    <asp:TextBox ID="inputnew3" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtCellphonenew" runat="server"></asp:TextBox>
                                 </div>
                                  <div class="col-6 ">
                                     <asp:Label ID="Label4" runat="server" Text="Email:"></asp:Label>
-                                    <asp:TextBox ID="inputnew4" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtMailnew" runat="server"></asp:TextBox>
                                 </div>
                                    <div class="col-6 ">
-                                    <asp:Label ID="Label6" runat="server" Text="ID de Usuario:"></asp:Label>
-                                    <asp:TextBox ID="inputnew5" runat="server"></asp:TextBox>
+                                     <asp:TextBox ID="txtidUsernew" runat="server" Visible="false" Style="display: none"></asp:TextBox>
+                                   <asp:Label ID="Label6" runat="server" Text="Nombre de Usuario:"></asp:Label>
+                                    <asp:TextBox ID="txtNameUsernew" runat="server"></asp:TextBox>
                                           </div>
                                      <div class="col-6 ">
-                                         <asp:TextBox ID="inputestado" runat="server" Visible="false" Style="display:none"></asp:TextBox>
+                                         <asp:TextBox ID="txtstatenew" runat="server" Visible="false" Style="display:none"></asp:TextBox>
                                     <asp:Label ID="Label5" runat="server" Text="Comision:"></asp:Label>
-                                  <label><asp:TextBox ID="inputnew6" runat="server"></asp:TextBox>%</label>
+                                  <label><asp:TextBox ID="txtComisionnew" runat="server"></asp:TextBox>%</label>
                                 </div>
                                      </div>
                                <div class="modal-footer">

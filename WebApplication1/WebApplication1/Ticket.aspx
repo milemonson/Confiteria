@@ -6,7 +6,8 @@
   <div id="printear">
       <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
-    <div id="generarFactura" runat="server" class="padding-space ">
+              <div id="generarFactura" runat="server" class="padding-space">
+     <div class="form-box" runat="server">
         <div class="form-row d-flex justify-content-center mt-5">
             <div class="form-group col-md-4">
                  <div class="d-flex justify-content-between">
@@ -17,7 +18,7 @@
                     <asp:Label ID="lblFechaEmision" runat="server" Text="Fecha de Emision"></asp:Label>
                 </div>
                 <div class="d-flex justify-content-center">
-                     <asp:TextBox ID="inputDate" runat="server" CssClass="form-control" name="" TextMode="Date"></asp:TextBox>
+                     <asp:TextBox ID="txtDate" runat="server" CssClass="form-control" name="" TextMode="Date"></asp:TextBox>
                     </div>
             </div>
         </div>
@@ -36,18 +37,20 @@
             </div>
         </div>
         </div>
+         </div>
             </ContentTemplate>
     </asp:UpdatePanel>
    
     
        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
         <ContentTemplate>
-    <div id="generarDetalle" runat="server" class="padding-space ">
+             <div id="generarDetalle" runat="server" class="padding-space">
+               <div class="form-box" runat="server">
     <div class="d-flex justify-content-center">
         <h1 class="titulo">Agregue articulos a su Venta</h1>
     </div>
          
-            <asp:TextBox ID="inputidTicket" runat="server" CssClass="form-control" name="idTicket" Visible="true" Style="display: none"></asp:TextBox>
+            <asp:TextBox ID="txtIdTicket" runat="server" CssClass="form-control" name="idTicket" Visible="true" Style="display: none"></asp:TextBox>
             <div class="form-row d-flex justify-content-center mt-5">
                 <div class="form-group col-md-4 ml-1">
                     <asp:Label ID="lblArticulo" runat="server" Text="Articulo"></asp:Label>
@@ -65,7 +68,7 @@
                             <asp:Label ID="lblCantidad" runat="server" Text="Cantidad:"></asp:Label>
                         </div>
                         <div class="d-flex justify-content-center">
-                            <asp:TextBox ID="inputCantidad" runat="server" CssClass="form-control" name="cantidad"></asp:TextBox>
+                            <asp:TextBox ID="txtQuantity" runat="server" CssClass="form-control" name="cantidad"></asp:TextBox>
                         </div>
 
                     </div>
@@ -74,7 +77,7 @@
                             <asp:Label ID="LblPrecio" runat="server" Text="Precio:"></asp:Label>
                         </div>
                         <div class="d-flex justify-content-center">
-                            <asp:TextBox ID="inputPrecio" runat="server" CssClass="form-control" name="Precio"></asp:TextBox>
+                            <asp:TextBox ID="txtPrice" runat="server" CssClass="form-control" name="Precio"></asp:TextBox>
                         </div>
 
                     </div>
@@ -89,6 +92,7 @@
                 <asp:Button ID="btnArticulo" runat="server" Text="Agregar Articulo" CssClass="btn btn-light" UseSubmitBehavior="False" OnClick="btnArticulo_Click" />
             </div>
       </div>
+                   </div>
               </ContentTemplate>
     </asp:UpdatePanel>
       
@@ -111,6 +115,7 @@
 
            <asp:UpdatePanel runat="server">
                 <ContentTemplate>
+                     <div class="padding-space">
                     <div class="d-flex justify-content-center">
                         <div>
                             <p class="parrafo">Total: &nbsp; </p>
@@ -119,23 +124,30 @@
                             <asp:Label Text="Total" runat="server" CssClass="parrafo" ID="lblTotal" />
                         </div>
                     </div>
+                    </div>
+                 
                 </ContentTemplate>
             </asp:UpdatePanel>
-                     </div>
+         </div>
+             
 
          <asp:UpdatePanel runat="server">
                 <ContentTemplate>
+                     <div class="padding-space">
       <div class="d-flex justify-content-center pl-4">
             <asp:Button ID="btnGenerarFac" runat="server" type="button" Text="Cargar Ticket" CssClass="btn btn-light" OnClick="GenerarFac_Click" />
                </div>
+                         </div>
                     </ContentTemplate>
             </asp:UpdatePanel>
      
           <asp:UpdatePanel runat="server">
         <ContentTemplate>
+             <div class="padding-space">
             <div class="modal-footer d-flex flex-row-reverse justify-content-center">
                 <asp:Button Text="Descargar" class="btn btn-dark" ID="btnGenerarPdf" runat="server" OnClientClick="printDiv('printear')" />
             </div>
+                 </div>
         </ContentTemplate>
     </asp:UpdatePanel>
    

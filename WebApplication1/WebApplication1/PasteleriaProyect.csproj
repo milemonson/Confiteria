@@ -115,6 +115,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Articulo.aspx" />
     <Content Include="Estadistica.aspx" />
+    <Content Include="EstadisticaporFecha.aspx" />
     <Content Include="RegistroUsuarios.aspx" />
     <Content Include="Rubro.aspx" />
     <Content Include="img\video.mp4" />
@@ -162,6 +163,13 @@
     </Compile>
     <Compile Include="Estadistica.aspx.designer.cs">
       <DependentUpon>Estadistica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EstadisticaporFecha.aspx.cs">
+      <DependentUpon>EstadisticaporFecha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EstadisticaporFecha.aspx.designer.cs">
+      <DependentUpon>EstadisticaporFecha.aspx</DependentUpon>
     </Compile>
     <Compile Include="RegistroUsuarios.aspx.cs">
       <DependentUpon>RegistroUsuarios.aspx</DependentUpon>

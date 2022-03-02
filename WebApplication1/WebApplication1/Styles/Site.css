@@ -83,12 +83,20 @@ body {
     color: #F5F5F5;
 }
 .padding-space {
-    padding-left: 500px;
+    padding-left: 300px;
+}
+.padding-spaceStadisitic {
+    padding-left: 300px;
 }
 .padding-spacegrillas {
     padding-left: 300px;
 }
 
+.form-box {
+    background-color: rgba(245, 245, 245, 0.5);
+    width: 800px;
+    height: 100%;
+}
 
 
 [tabindex="-1"]:focus {

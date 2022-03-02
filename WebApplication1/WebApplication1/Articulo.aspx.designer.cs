@@ -78,13 +78,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label lb1;
 
         /// <summary>
-        /// Control input1.
+        /// Control txtNameRubro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox input1;
+        protected global::System.Web.UI.WebControls.TextBox txtNameRubro;
 
         /// <summary>
         /// Control lb2.
@@ -96,13 +96,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label lb2;
 
         /// <summary>
-        /// Control input2.
+        /// Control txtNameArticulo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox input2;
+        protected global::System.Web.UI.WebControls.TextBox txtNameArticulo;
 
         /// <summary>
         /// Control lb3.
@@ -114,13 +114,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label lb3;
 
         /// <summary>
-        /// Control input3.
+        /// Control txtQuantity.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox input3;
+        protected global::System.Web.UI.WebControls.TextBox txtQuantity;
 
         /// <summary>
         /// Control Label6.
@@ -132,13 +132,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label Label6;
 
         /// <summary>
-        /// Control dropRubro1.
+        /// Control dropRubroEdit.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dropRubro1;
+        protected global::System.Web.UI.WebControls.DropDownList dropRubroEdit;
 
         /// <summary>
         /// Control lb4.
@@ -150,22 +150,22 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label lb4;
 
         /// <summary>
-        /// Control input4.
+        /// Control txtPrice.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox input4;
+        protected global::System.Web.UI.WebControls.TextBox txtPrice;
 
         /// <summary>
-        /// Control input5.
+        /// Control txtstate.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox input5;
+        protected global::System.Web.UI.WebControls.TextBox txtstate;
 
         /// <summary>
         /// Control btnModificar.
@@ -204,24 +204,6 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.UpdatePanel UpdatePanel2;
 
         /// <summary>
-        /// Control Label1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-
-        /// <summary>
-        /// Control inputnew1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputnew1;
-
-        /// <summary>
         /// Control Label2.
         /// </summary>
         /// <remarks>
@@ -231,13 +213,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Control inputnew2.
+        /// Control txtNameArticulonew.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputnew2;
+        protected global::System.Web.UI.WebControls.TextBox txtNameArticulonew;
 
         /// <summary>
         /// Control Label3.
@@ -249,13 +231,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Control inputnew3.
+        /// Control txtQuantitynew.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputnew3;
+        protected global::System.Web.UI.WebControls.TextBox txtQuantitynew;
 
         /// <summary>
         /// Control Label5.
@@ -267,13 +249,13 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
-        /// Control dropRubro.
+        /// Control dropRubronew.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dropRubro;
+        protected global::System.Web.UI.WebControls.DropDownList dropRubronew;
 
         /// <summary>
         /// Control Label4.
@@ -285,22 +267,22 @@ namespace PasteleriaProyect
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// Control inputnew4.
+        /// Control txtPricenew.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputnew4;
+        protected global::System.Web.UI.WebControls.TextBox txtPricenew;
 
         /// <summary>
-        /// Control inputestado.
+        /// Control txtstatenew.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputestado;
+        protected global::System.Web.UI.WebControls.TextBox txtstatenew;
 
         /// <summary>
         /// Control btnAgregar.

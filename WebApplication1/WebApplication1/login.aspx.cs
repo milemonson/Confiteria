@@ -20,7 +20,7 @@ namespace PasteleriaProyect
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            if (inputuser.Text.Equals("") || inputpass.Text.Equals(""))
+            if (txtUser.Text.Equals("") || txtPass.Text.Equals(""))
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Popup", "CompletarCampos()", true);
                 return;
@@ -31,13 +31,13 @@ namespace PasteleriaProyect
                 try
                 {
 
-                    string nameUser = inputuser.Text;
-                    string password = inputpass.Text;
+                    string nameUser = txtUser.Text;
+                    string password = txtPass.Text;
                     bool usuario = UsuarioBLL.ValidarUsuario(nameUser, password);
                    
                         if (usuario == true)
                         {
-                        Session["NameUser"] = inputuser.Text;
+                        Session["NameUser"] = txtUser.Text;
                         Response.Redirect("index.aspx");
 
                         }

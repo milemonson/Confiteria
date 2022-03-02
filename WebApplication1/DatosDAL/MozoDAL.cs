@@ -30,7 +30,7 @@ namespace DatosDAL
                             cmd.Parameters.AddWithValue("@apellido", mo.lastname);
                             cmd.Parameters.AddWithValue("@telefono", mo.cellphone);
                             cmd.Parameters.AddWithValue("@email", mo.email);
-                            cmd.Parameters.AddWithValue("@idUser", mo.idusuario);
+                            cmd.Parameters.AddWithValue("@idUser", mo.usuario.idUser);
                             cmd.Parameters.AddWithValue("@state", mo.estado);
                             cmd.Parameters.AddWithValue("@comision", mo.comision);
                         }
@@ -46,8 +46,37 @@ namespace DatosDAL
         }
 
 
+        public static int TraerNameUser(string nameUser)
+        {
+            try
+            {
+                int iduser = 0;
+                using (SqlConnection cn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConexionBD"].ConnectionString))
+                {
+                    cn.Open();
 
 
+                    using (SqlCommand cmd = new SqlCommand("sp_selectNameUser", cn))
+                    {
+                        using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@nameUser", nameUser);
+
+                        }
+                       iduser = int.Parse(cmd.ExecuteScalar().ToString());
+                    }
+
+                }
+                return iduser;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+            
         public static void ActualizarDatosMozo(Mozo mo)
         {
             try
@@ -67,7 +96,6 @@ namespace DatosDAL
                             cmd.Parameters.AddWithValue("@apellido", mo.lastname);
                             cmd.Parameters.AddWithValue("@telefono", mo.cellphone);
                             cmd.Parameters.AddWithValue("@email", mo.email);
-                            cmd.Parameters.AddWithValue("@state", mo.estado);
                             cmd.Parameters.AddWithValue("@comision", mo.comision);
 
                         }
@@ -181,9 +209,11 @@ namespace DatosDAL
                                 mo.lastname = obt["Apellido"].ToString();
                                 mo.cellphone = obt["Telefono"].ToString();
                                 mo.email = obt["Email"].ToString();
-                                mo.idusuario = Convert.ToInt32(obt["idUser"].ToString());
                                 mo.estado = Convert.ToInt32(obt["Estado"].ToString());
                                 mo.comision = float.Parse(obt["Comision"].ToString());
+                                mo.usuario = new Usuario();
+                                mo.usuario.idUser = Convert.ToInt32(obt["idUser"].ToString());
+                                mo.usuario.nameUser = obt["NameUser"].ToString();
                                 mozos.Add(mo);
 
                             }
@@ -195,10 +225,32 @@ namespace DatosDAL
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
 
+        }
+
+        public static SqlDataReader VentasPorMozo(DateTime fecha)
+        {
+            SqlConnection cn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConexionBD"].ConnectionString);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Clear();
+                cmd.CommandText = "sp_ventasxmozo";
+                cmd.Parameters.AddWithValue("@fecha", fecha);
+                cn.Open();
+                SqlDataReader obt = cmd.ExecuteReader();
+                return obt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
         }
     }
 }

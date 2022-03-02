@@ -190,3 +190,6 @@ function succes() {
 function myerror2() {
     alert("Error al generar Ticket");
 }
+function myerror3() {
+    alert("No se encuentra usuario");
+}
